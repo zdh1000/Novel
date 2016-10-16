@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
 //                        String jsonString = new String(response.toString().getBytes());
-                        textview.setText(call.request().url().toString()+"\n"+response);
+                        textview.setText(call.request().url().toString()+"\n"+response.body());
                     }
 
                     @Override
@@ -62,21 +62,6 @@ public class MainActivity extends AppCompatActivity
                         textview.setText(call.request().url().toString()+":"+t.getMessage());
                     }
                 });
-
-//                textview.setText("http://api.zhuishushenqi.com/book/fuzzy-search?query=%E4%B8%89%E4%BD%93");
-//                HttpUtil.sendGetRequest(
-//                        "http://api.zhuishushenqi.com/book/fuzzy-search?query=%E4%B8%89%E4%BD%93",
-//                        new HttpCallbackListener() {
-//                            @Override
-//                            public void onFinish(byte[] response) {
-//                                Log.d("response",new String(response));
-//                            }
-//
-//                            @Override
-//                            public void onError(Exception e) {
-//                                Log.d("onError",e.getMessage());
-//                            }
-//                        });
             }
         });
 
